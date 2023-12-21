@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
 import {Counter} from "./components/Counter";
-export default function App(){
+import './index.scss'
+const App = () => {
     return (
-        <div>
+        <div className="app">
+            hello@@
             <Counter></Counter>
         </div>
     );
-}
+};
+
+export default App;
