@@ -1,0 +1,23 @@
+.Sidebar {
+  height: var(--sidebar-height);
+  width: var(--sidebar-width);
+  background-color: var(--inverted-bg-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: var(--sidebar-z);
+  transition: left 0.3s;
+}
+
+.collapsed {
+  left: calc(0px - var(--sidebar-width));
+  top: 0;
+}
+
+.collapseButton{
+
+}
+
+.sidebarButton{
+  margin: 20px;
+}
