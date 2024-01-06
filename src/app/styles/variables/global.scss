@@ -10,5 +10,11 @@
   --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
 
   // Sizes
-  --navbar-height: 50px;
+    //navbar
+  --navbar-height: 60px;
+
+    //sidebar
+  --sidebar-width: 250px;
+  --sidebar-height: 100vh;
+  --sidebar-z: 10;
 }
