@@ -28,7 +28,9 @@ module.exports = {
         tsconfigRootDir: __dirname,
     },
     "plugins": [
-        "react"
+        "react",
+        "@typescript-eslint",
+        "i18next"
     ],
     "rules": {
         'react/jsx-indent': [2, 4],
@@ -47,7 +49,8 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         '@typescript-eslint/explicit-function-return-type':'off',
-        "@typescript-eslint/no-unsafe-argument": "warn"
+        "@typescript-eslint/no-unsafe-argument": "warn",
+        "i18next/no-literal-string": ['error', {markupOnly:true}]
     },
     globals: {
         __IS_DEV__: true,

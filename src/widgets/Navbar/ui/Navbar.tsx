@@ -17,7 +17,7 @@ export const Navbar = ({ className }: NavbarProps) => {
 
     return (
         <div className={classNames(cls.Navbar, {}, [className ?? ''])}>
-            <button onClick={changeCollapse}>toggle</button>
+            <button onClick={changeCollapse}>{t('toggle')}</button>
             <div className={cls.links}>
                 <AppLink theme={AppLinkTheme.PRIMARY} to={'/main'}>{t('main')}</AppLink>
                 <AppLink theme={AppLinkTheme.PRIMARY} to={'/about'}>{t('about')}</AppLink>
