@@ -1,14 +1,13 @@
-import {Suspense} from 'react'
+import { Suspense } from 'react'
 import './styles/index.scss'
-import {useTheme} from "app/providers/ThemeProvider";
-import {classNames} from "shared/lib/classNames/classNames";
-import {AppRouter} from "app/providers/router";
-import {Navbar} from "widgets/Navbar";
-import {DimmerOverlay, Sidebar} from "widgets/Sidebar";
+import { useTheme } from 'app/providers/ThemeProvider'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { AppRouter } from 'app/providers/router'
+import { Navbar } from 'widgets/Navbar'
+import { DimmerOverlay, Sidebar } from 'widgets/Sidebar'
 
 const App = () => {
-
-    const {theme} = useTheme()
+    const { theme } = useTheme()
     return (
         <Suspense fallback=''>
             <div className={classNames('app', {}, [theme])}>
@@ -20,7 +19,7 @@ const App = () => {
                 <DimmerOverlay/>
             </div>
         </Suspense>
-    );
-};
+    )
+}
 
-export default App;
+export default App
