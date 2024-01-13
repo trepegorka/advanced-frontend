@@ -48,9 +48,10 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        '@typescript-eslint/explicit-function-return-type':'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
         "@typescript-eslint/no-unsafe-argument": "warn",
-        "i18next/no-literal-string": ['error', {markupOnly:true}]
+        "i18next/no-literal-string": ['error', {markupOnly: true}],
+        "max-len": ["error", {ignoreComments: true}],
     },
     globals: {
         __IS_DEV__: true,

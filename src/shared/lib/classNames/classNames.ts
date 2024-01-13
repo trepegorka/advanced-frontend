@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>
+type Mods = Record<string, boolean>
 
 // Custom classNames() for init css classes in components.
 // May be changed by default react method.
