@@ -8,9 +8,10 @@ interface DimmerOverlayProps {
 
 export const DimmerOverlay = ({ className }: DimmerOverlayProps) => {
     const { collapsed, changeCollapse } = useSidebarCollapse()
+
     return (
         !collapsed
-            ? <div onClick={changeCollapse} className={classNames(cls.DimmerOverlay, {}, [className ?? ''])}/>
+            ? <div onClick={changeCollapse} className={classNames(cls.DimmerOverlay, {}, [className])}/>
             : null
     )
 }

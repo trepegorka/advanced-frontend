@@ -12,7 +12,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
     const { collapsed, changeCollapse } = useSidebarCollapse()
 
     return (
-        <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className ?? ''])}>
+        <div className={
+            classNames(
+                cls.Sidebar,
+                { [cls.collapsed]: collapsed },
+                [className])}>
             <button
                 onClick={changeCollapse}
                 className={classNames(cls.sidebarButton)}
