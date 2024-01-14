@@ -5,11 +5,12 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { AppRouter } from 'app/providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { DimmerOverlay, Sidebar } from 'widgets/Sidebar'
+import { PageLoader } from 'widgets/PageLoader'
 
 const App = () => {
     const { theme } = useTheme()
     return (
-        <Suspense fallback=''>
+        <Suspense fallback={<PageLoader darkLoader={false}/>}>
             <div className={classNames('app', {}, [theme])}>
                 <Navbar/>
                 <Sidebar/>
