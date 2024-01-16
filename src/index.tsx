@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from './app/providers/ThemeProvider'
 import { SidebarProvider } from 'app/providers/SidebarProvider'
 import 'shared/config/i18n/i18n'
+import { ErrorBoundary } from 'app/providers/ErrorBoundary'
 
 const rootElement = document.getElementById('root')
 
@@ -14,11 +15,13 @@ if (rootElement !== null) {
     root.render(
         <React.StrictMode>
             <BrowserRouter>
-                <ThemeProvider>
-                    <SidebarProvider>
-                        <App/>
-                    </SidebarProvider>
-                </ThemeProvider>
+                <ErrorBoundary>
+                    <ThemeProvider>
+                        <SidebarProvider>
+                            <App/>
+                        </SidebarProvider>
+                    </ThemeProvider>
+                </ErrorBoundary>
             </BrowserRouter>
         </React.StrictMode>
     )

@@ -3,5 +3,8 @@
   "main": "main",
   "about": "about",
   "toggle": "toggle",
-  "Page not found": "Page not found"
+  "Page not found": "Page not found",
+  "Error was found": "Error was found",
+  "reload page": "reload page",
+  "Error clicker": "Error clicker"
 }

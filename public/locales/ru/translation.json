@@ -3,5 +3,7 @@
   "main": "главная",
   "about": "о нас",
   "toggle": "открыть",
-  "Page not found": "Страница не найдена"
+  "Page not found": "Страница не найдена",
+  "Error was found": "Error was found",
+  "reload page": "reload page"
 }

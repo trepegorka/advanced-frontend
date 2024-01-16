@@ -15,7 +15,10 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
     return (
         <div className={classNames(cls.container, {}, [cls.buttonSpace, className])}>
             <label className={cls.toggle} htmlFor={cls.switch}>
-                <input id={cls.switch} className={cls.input} type={'checkbox'} onChange={changeTheme}
+                <input id={cls.switch}
+                    className={cls.input} type={'checkbox'}
+                    onChange={changeTheme
+                    }
                     checked={theme === Theme.NORMAL}/>
 
                 <div className={classNames(cls.icon, {}, [cls.iconMoon])}>
