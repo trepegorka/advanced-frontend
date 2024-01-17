@@ -2,13 +2,12 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
 import { useSidebarCollapse } from 'app/providers/SidebarProvider'
 import { useTranslation } from 'react-i18next'
-
 interface SidebarProps {
     className?: string
 }
 
 export const Sidebar = ({ className }: SidebarProps) => {
-    const { t } = useTranslation()
+    const { t } = useTranslation('translation')
     const { collapsed, changeCollapse } = useSidebarCollapse()
 
     return (

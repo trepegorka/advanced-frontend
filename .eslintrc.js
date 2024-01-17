@@ -7,7 +7,7 @@ module.exports = {
         "standard-with-typescript",
         "plugin:react/recommended"
     ],
-    "overrides": [
+    overrides: [
         {
             "env": {
                 "node": true
@@ -18,11 +18,17 @@ module.exports = {
             "parserOptions": {
                 "sourceType": "script"
             }
+        },
+        {
+            files:['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                "i18next/no-literal-string": 'off'
+            }
         }
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module",
         parser: '@typescript-eslint/parser',
         project: './tsconfig.json',
         tsconfigRootDir: __dirname,
@@ -32,7 +38,7 @@ module.exports = {
         "@typescript-eslint",
         "i18next"
     ],
-    "rules": {
+    rules: {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         '@typescript-eslint/indent': ['error', 4],
@@ -51,7 +57,7 @@ module.exports = {
         '@typescript-eslint/explicit-function-return-type': 'off',
         "@typescript-eslint/no-unsafe-argument": "warn",
         "i18next/no-literal-string": ['error', {markupOnly: true}],
-        "max-len": ["error", {"code": 100, ignoreComments: true}],
+        "max-len": [1, {"code": 100, ignoreComments: true}],
     },
     globals: {
         __IS_DEV__: true,

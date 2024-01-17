@@ -1,18 +1,16 @@
-/**
- * @jest-environment jsdom
- */
-
-import { render, fireEvent } from '@testing-library/react'
+import { fireEvent } from '@testing-library/react'
 import { Sidebar } from './Sidebar'
 import '@testing-library/jest-dom'
+import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation'
+describe('Sidebar', () => {
+    // Ready test for sidebar mod 'Collapsed'
+    test('should toggle collapsed state on button click', () => {
+        const { getByText, container } = renderWithTranslation(<Sidebar />)
 
-// test is done, please do not change
-test('should toggle collapsed state on button click', () => {
-    const { getByText, container } = render(<Sidebar />)
+        expect(container.firstChild).not.toHaveClass('collapsed')
 
-    expect(container.firstChild).not.toHaveClass('collapsed')
+        fireEvent.click(getByText('toggle'))
 
-    fireEvent.click(getByText('toggle'))
-
-    expect(container.firstChild).toHaveClass('Sidebar')
+        expect(container.firstChild).toHaveClass('Sidebar')
+    })
 })
