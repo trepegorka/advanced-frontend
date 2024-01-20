@@ -5,7 +5,10 @@ import { Link, type LinkProps } from 'react-router-dom'
 
 export enum AppLinkTheme {
     PRIMARY = 'primary',
-    SECONDARY = 'secondary'
+    PRIMARY_INVERTED = 'primary-inverted',
+    SECONDARY = 'secondary',
+    SECONDARY_INVERTED = 'secondary-inverted'
+
 }
 
 interface AppLinkProps extends LinkProps {
@@ -18,7 +21,12 @@ const AppLink: FC<AppLinkProps> = (props) => {
     return (
         <Link
             to={to}
-            className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+            className={classNames(
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                cls.AppLink,
+                {},
+                [className, cls[theme]])
+            }
             {...otherProps}
         >
             {children}

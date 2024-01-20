@@ -14,9 +14,15 @@ export const PageError = ({ className }: PagErrorProps) => {
         location.reload()
     }
     return (
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         <div className={classNames(cls.ErrorPage, {}, [className])}>
             {t('Error was found')}
-            <Button theme={ThemeButton.DEFAULT} onClick={reload}> {t('reload page')}</Button>
+            <Button onClick={reload}
+                theme={ThemeButton.OUTLINE}
+                style={{ margin: '10px' }}
+            >
+                {t('reload page')}
+            </Button>
         </div>
     )
 }

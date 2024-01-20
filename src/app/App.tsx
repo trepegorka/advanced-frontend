@@ -6,7 +6,6 @@ import { AppRouter } from 'app/providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { DimmerOverlay, Sidebar } from 'widgets/Sidebar'
 import { PageLoader } from 'widgets/PageLoader'
-import { BugButton } from 'app/providers/ErrorBoundary'
 
 const App = () => {
     const { theme } = useTheme()
@@ -15,7 +14,6 @@ const App = () => {
         <Suspense fallback={<PageLoader darkLoader={false}/>}>
             <div className={classNames('app', {}, [theme])}>
                 <Navbar/>
-                <BugButton/>
                 <Sidebar/>
                 <div className={'content-page'}>
                     <AppRouter/>

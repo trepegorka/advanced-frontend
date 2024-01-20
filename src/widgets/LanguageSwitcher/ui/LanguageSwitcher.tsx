@@ -15,8 +15,13 @@ export const LanguageSwitcher = ({ className }: LanguageSwitcherProps) => {
     }
     return (
         <Button
-            className={classNames(cls.LanguageSwitcher, {}, [className ?? ''])}
-            theme={ThemeButton.CLEAR}
+            className={
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+                classNames(cls.LanguageSwitcher,
+                    {},
+                    [className])
+            }
+            theme={ThemeButton.CLEAR_REVERSE}
             onClick={toggle}
         >
             {t('RU')}
