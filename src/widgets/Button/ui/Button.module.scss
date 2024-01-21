@@ -6,26 +6,26 @@
   background: none;
   border: none;
   outline: none;
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
 .clear_reverse {
   background: none;
   border: none;
   outline: none;
-  color: var(--inverted-primary-color)
+  color: var(--inverted-primary-color);
 }
 
 .outline {
   padding: 5px 10px;
   background: none;
   border: 1px solid var(--primary-color);
-  color: var(--primary-color)
+  color: var(--primary-color);
 }
 
-.outline_reverse{
+.outline_reverse {
   padding: 5px 10px;
   background: none;
   border: 1px solid var(--inverted-primary-color);
-  color: var(--inverted-primary-color)
+  color: var(--inverted-primary-color);
 }

@@ -21,10 +21,12 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
                     }
                     checked={theme === Theme.NORMAL}/>
 
+                {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
                 <div className={classNames(cls.icon, {}, [cls.iconMoon])}>
                     <Moon/>
                 </div>
 
+                {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
                 <div className={classNames(cls.icon, {}, [cls.iconSun])}>
                     <Sun/>
                 </div>

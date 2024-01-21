@@ -1,17 +1,21 @@
 @mixin paddings {
-  padding: 2px 2px;
+  padding: 2px;
 }
+
 .primary-Background {
   @include paddings;
-  background-color: var(--primary-color)
+
+  background-color: var(--primary-color);
 }
 
 .primary-inverted-Background {
   @include paddings;
-  background-color: var(--inverted-primary-color)
+
+  background-color: var(--inverted-primary-color);
 }
 
 .red-Background {
   @include paddings;
-  background-color: red
+
+  background-color: red;
 }
