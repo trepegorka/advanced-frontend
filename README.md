@@ -1,2 +1,1 @@
-- Webpack configuration and config decomposition with Typescript
-- 
+
