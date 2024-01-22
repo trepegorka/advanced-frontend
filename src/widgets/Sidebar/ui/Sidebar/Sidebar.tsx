@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { Button } from 'widgets/Button'
 import { BugButton } from 'app/providers/ErrorBoundary'
 import { ThemeButton } from 'widgets/Button/ui/Button'
-import { SidebarNav } from 'widgets/SidebarNavigation'
+import { SidebarNav } from 'widgets/SidebarNav'
 
 interface SidebarProps {
     className?: string
