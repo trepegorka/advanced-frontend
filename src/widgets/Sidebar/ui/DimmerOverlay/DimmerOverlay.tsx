@@ -11,6 +11,7 @@ export const DimmerOverlay = ({ className }: DimmerOverlayProps) => {
 
     return (
         !collapsed
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             ? <div onClick={changeCollapse} className={classNames(cls.DimmerOverlay, {}, [className])}/>
             : null
     )

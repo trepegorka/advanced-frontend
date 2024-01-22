@@ -12,6 +12,9 @@
 .content-page {
   display: flex;
   min-height: calc(100vh - var(--navbar-height));
+  width: calc(100% - var(--collapsed-sidebar));
+  margin-left: auto;
+  padding: 0 10px;
 }
 
 .page-wrapper {

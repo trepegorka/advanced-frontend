@@ -15,9 +15,11 @@ const App = () => {
             <div className={classNames('app', {}, [theme])}>
                 <Navbar/>
                 <Sidebar/>
+
                 <div className={'content-page'}>
                     <AppRouter/>
                 </div>
+
                 <DimmerOverlay/>
             </div>
         </Suspense>

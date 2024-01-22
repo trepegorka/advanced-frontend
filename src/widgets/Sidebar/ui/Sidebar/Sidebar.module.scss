@@ -1,19 +1,61 @@
 .Sidebar {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 0 1 auto;
   height: var(--sidebar-height);
   width: var(--sidebar-width);
   background-color: var(--inverted-bg-color);
-  position: absolute;
   left: 0;
   top: 0;
   z-index: var(--sidebar-z);
-  transition: left 0.3s;
+  transition: width 0.3s;
+}
+
+.collapseButton {
+  margin: 20px 13.7px;
+}
+
+.toggleButtonText {
+  display: block;
+  transform: rotate(180deg);
+}
+
+.bugButton {
+  white-space: nowrap;
+  margin: 0 auto;
 }
 
 .collapsed {
-  left: calc(0px - var(--sidebar-width));
+  width: var(--collapsed-sidebar);
   top: 0;
+  display: flex;
+  flex-direction: column;
+
+  .bugButton {
+    visibility: hidden;
+    white-space: nowrap;
+  }
+
+  .toggleButtonText {
+    display: block;
+    transform: rotate(0deg);
+  }
 }
 
-.Sidebar button {
-  margin: 20px;
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fadeAppear {
+  animation: fade-in 0.3s ease-in-out forwards;
 }

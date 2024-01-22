@@ -22,7 +22,7 @@ const preview: Preview = {
         }
     },
     decorators: [StyleDecorator(Theme.DARK),
-        (Story) => (<BrowserRouter><Story/></BrowserRouter>),
+        Story => (<BrowserRouter><Story/></BrowserRouter>),
         Story => (<ThemeProvider><Story/></ThemeProvider>)]
 }
 
