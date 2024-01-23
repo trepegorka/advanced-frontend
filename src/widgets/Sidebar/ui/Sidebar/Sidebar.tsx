@@ -1,8 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Sidebar.module.scss'
 import { useSidebarCollapse } from 'app/providers/SidebarProvider'
-import { useTranslation } from 'react-i18next'
-import { Button } from 'widgets/Button'
 import { BugButton } from 'app/providers/ErrorBoundary'
 import { ThemeButton } from 'widgets/Button/ui/Button'
 import { SidebarNav } from 'widgets/SidebarNav'
