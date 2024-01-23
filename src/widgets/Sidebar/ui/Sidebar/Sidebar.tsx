@@ -18,7 +18,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
             classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
 
-            <ToogleSwitch onClick={changeCollapse} className={cls.ToogleSwitch}/>
+            <ToogleSwitch data-testid='toogleSidebar' onClick={changeCollapse} className={cls.ToogleSwitch}/>
 
             <SidebarNav/>
 

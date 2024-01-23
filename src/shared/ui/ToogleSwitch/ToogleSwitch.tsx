@@ -7,11 +7,11 @@ interface ToogleSwitchProps extends ButtonHTMLAttributes<HTMLDivElement> {
     className?: string
 }
 
-const ToogleSwitch: FC<ToogleSwitchProps> = ({ className, onClick }) => {
+const ToogleSwitch: FC<ToogleSwitchProps> = ({ className, onClick, ...props }) => {
     const { collapsed } = useSidebarCollapse()
     return (
-        <div onClick={onClick} className={classNames(cls.switch, {}, [className])}>
-            <input type='checkbox' checked={!collapsed}/>
+        <div onClick={onClick} className={classNames(cls.switch, {}, [className])} {...props}>
+            <input type='checkbox' checked={!collapsed} onChange={() => {}}/>
             <div>
                 <span className={cls.line_1}></span>
                 <span className={cls.line_2}></span>
