@@ -13,13 +13,8 @@
   transition: width 0.3s;
 }
 
-.collapseButton {
-  margin: 20px 13.7px;
-}
-
-.toggleButtonText {
-  display: block;
-  transform: rotate(180deg);
+.ToogleSwitch {
+  margin: 10px 12.5px;
 }
 
 .bugButton {
@@ -36,11 +31,6 @@
   .bugButton {
     visibility: hidden;
     white-space: nowrap;
-  }
-
-  .toggleButtonText {
-    display: block;
-    transform: rotate(0deg);
   }
 }
 

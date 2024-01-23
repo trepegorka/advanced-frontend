@@ -1,0 +1,49 @@
+.Icon {
+  stroke: var(--bg-color);
+  margin: 4px 4px 4px 12px;
+}
+
+.iconColumn {
+  display: flex;
+  align-items: center;
+}
+
+.flexed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0;
+  margin: 0 5px;
+}
+
+.flexed:hover {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.textColumn {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.collapsed {
+  .textColumn {
+    display: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.textAppear {
+  animation: fade-in 0.3s ease-in-out forwards;
+}
