@@ -1,1 +1,1 @@
-export { SidebarNav } from 'widgets/SidebarNav/ui/SidebarNav'
+export { SidebarNav } from './ui/SidebarNav'
