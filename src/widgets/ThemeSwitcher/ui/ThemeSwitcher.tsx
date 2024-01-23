@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ThemeSwitcher.module.scss'
 import { useTheme } from 'app/providers/ThemeProvider'
-import Moon from 'shared/assets/icons/moon.svg'
-import Sun from 'shared/assets/icons/sun.svg'
 import { Theme } from 'app/providers/ThemeProvider/lib/ThemeContext'
+import MoonIcon from 'shared/assets/icons/MoonIcon'
+import SunIcon from 'shared/assets/icons/SunIcon'
 
 interface ThemeSwitcherProps {
     className?: string
@@ -24,12 +24,12 @@ export const ThemeSwitcher = ({ className }: ThemeSwitcherProps) => {
 
                 {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
                 <div className={classNames(cls.icon, {}, [cls.iconMoon])}>
-                    <Moon/>
+                    <MoonIcon/>
                 </div>
 
                 {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
                 <div className={classNames(cls.icon, {}, [cls.iconSun])}>
-                    <Sun/>
+                    <SunIcon/>
                 </div>
             </label>
         </div>
