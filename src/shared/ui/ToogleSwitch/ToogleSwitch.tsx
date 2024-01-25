@@ -10,7 +10,10 @@ interface ToogleSwitchProps extends ButtonHTMLAttributes<HTMLDivElement> {
 const ToogleSwitch: FC<ToogleSwitchProps> = ({ className, onClick, ...props }) => {
     const { collapsed } = useSidebarCollapse()
     return (
-        <div onClick={onClick} className={classNames(cls.switch, {}, [className])} {...props}>
+        <div onClick={onClick}
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            className={classNames(cls.switch, {}, [className])}
+            {...props}>
             <input type='checkbox' checked={!collapsed} onChange={() => {}}/>
             <div>
                 <span className={cls.line_1}></span>

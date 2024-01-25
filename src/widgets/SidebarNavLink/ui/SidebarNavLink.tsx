@@ -24,7 +24,11 @@ export const SidebarNavLink = ({ className, icon, text, path }: SidebarNavLinkPr
     }
 
     return (
-        <div className={classNames(cls.SidebarNavLink, { [cls.collapsed]: collapsed }, [className])}>
+        <div className={classNames(
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+            cls.SidebarNavLink,
+            { [cls.collapsed]: collapsed },
+            [className])}>
             <AppLink
                 onClick={changeCollapseIfNotCollapsed}
                 className={cls.flexed}
@@ -34,6 +38,7 @@ export const SidebarNavLink = ({ className, icon, text, path }: SidebarNavLinkPr
                 <div className={cls.iconColumn}>
                     {icon({ className: cls.Icon })}
                 </div>
+                {/* eslint-disable-next-line @typescript-eslint/no-unsafe-argument */}
                 <div className={classNames(cls.textColumn, { [cls.textAppear]: !collapsed })}>
                     {t(text)}
                 </div>

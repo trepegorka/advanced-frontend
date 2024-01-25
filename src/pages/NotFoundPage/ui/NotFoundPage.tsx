@@ -9,6 +9,7 @@ interface NotFoundPageProps {
 export const NotFoundPage = ({ className }: NotFoundPageProps) => {
     const { t } = useTranslation()
     return (
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         <div className={classNames(cls.NotFoundPage, {}, [className])}>
             {t('Page not found')}
         </div>

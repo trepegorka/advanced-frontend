@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './PageLoader.module.scss'
-import { Loader } from 'shared/Loader/Loader'
+import { Loader } from 'shared/ui/Loader/Loader'
 
 interface PageLoaderProps {
     className?: string
@@ -9,6 +9,7 @@ interface PageLoaderProps {
 
 export const PageLoader = ({ className, darkLoader }: PageLoaderProps) => {
     return (
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         <div className={classNames(cls.page__loader, {}, [className])}>
             <Loader darkLoader={darkLoader}/>
         </div>

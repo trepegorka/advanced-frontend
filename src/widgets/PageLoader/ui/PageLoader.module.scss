@@ -1,7 +1,8 @@
 .page__loader {
-  height: calc(100vh - var(--navbar-height));
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
-  flex-grow: 1;
-  align-items: center;
-  justify-content: center;
+  z-index: 999; /* Установите z-index на приемлемое значение */
 }

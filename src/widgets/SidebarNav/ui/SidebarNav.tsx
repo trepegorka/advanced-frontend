@@ -11,6 +11,7 @@ interface SidebarNavProps {
 
 export const SidebarNav = ({ className }: SidebarNavProps) => {
     return (
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         <div className={classNames(cls.sidebarNav, {}, [className])}>
             <SidebarNavLink icon={HomeIcon} text={'main'} path={RoutePath.main}/>
             <SidebarNavLink icon={AboutIcon} text={'about'} path={RoutePath.about}/>

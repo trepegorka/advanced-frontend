@@ -11,3 +11,7 @@
 .links {
   margin-left: auto;
 }
+
+.fullWindowDimmer {
+  z-index: calc(var(--sidebar-z) + 1) !important;
+}

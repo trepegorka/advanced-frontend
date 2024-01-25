@@ -3,3 +3,4 @@ ios/
 android/
 *.config.js
 scripts/generate-visual-json-report.js
+src/shared/assets/icons
