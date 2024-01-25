@@ -3,7 +3,8 @@
   margin: 5px;
 }
 
-.clear, .clear_reverse {
+.clear,
+.clear_reverse {
   background: none;
   border: none;
   outline: none;
@@ -14,7 +15,8 @@
   color: var(--inverted-primary-color);
 }
 
-.outline, .outline_reverse {
+.outline,
+.outline_reverse {
   padding: 5px 10px;
   background: none;
   border: 1px solid var(--primary-color);
