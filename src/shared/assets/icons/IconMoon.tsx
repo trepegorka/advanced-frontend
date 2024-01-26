@@ -3,7 +3,7 @@ import * as React from 'react'
 interface MoonIconProps {
     className?: string
 }
-const MoonIcon = ({ className }: MoonIconProps) => (
+const IconMoon = ({ className }: MoonIconProps) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         width={32}
@@ -19,4 +19,4 @@ const MoonIcon = ({ className }: MoonIconProps) => (
         />
     </svg>
 )
-export default MoonIcon
+export default IconMoon
