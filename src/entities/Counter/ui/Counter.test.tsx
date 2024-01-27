@@ -4,7 +4,9 @@ import { fireEvent } from '@testing-library/react'
 
 describe('Counter', () => {
     test('increment test', () => {
-        const { getByTestId } = componentRender(<Counter/>, { initialState: { counter: { value: 10 } } })
+        const { getByTestId } = componentRender(<Counter/>, {
+            initialState: { counter: { value: 10 } }
+        })
         expect(getByTestId('h1id')).toBeInTheDocument()
 
         fireEvent.click(getByTestId('increment-btn'))
@@ -14,7 +16,9 @@ describe('Counter', () => {
     })
 
     test('decrement test', () => {
-        const { getByTestId } = componentRender(<Counter/>, { initialState: { counter: { value: 10 } } })
+        const { getByTestId } = componentRender(<Counter/>, {
+            initialState: { counter: { value: 10 } }
+        })
         expect(getByTestId('h1id')).toBeInTheDocument()
 
         fireEvent.click(getByTestId('decrement-btn'))

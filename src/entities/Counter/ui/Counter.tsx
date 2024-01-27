@@ -2,10 +2,12 @@ import { Button } from 'widgets/Button'
 import { useDispatch, useSelector } from 'react-redux'
 import { counterActions } from '../model/slice/counterSlice'
 import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue'
+import { useTranslation } from 'react-i18next'
 
 export const Counter = () => {
     const dispatch = useDispatch()
     const counterValue = useSelector(getCounterValue)
+    const { t } = useTranslation()
     const increment = () => {
         dispatch(counterActions.increment())
     }
@@ -14,15 +16,12 @@ export const Counter = () => {
     }
     return (
         <div>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
             <h1 data-testid={'h1id'}>{counterValue}</h1>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button data-testid={'increment-btn'} onClick={increment}>
-                increment
+                {t('increment')}
             </Button>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
             <Button data-testid={'decrement-btn'} onClick={decrement}>
-                decrement
+                {t('decrement')}
             </Button>
         </div>
     )
