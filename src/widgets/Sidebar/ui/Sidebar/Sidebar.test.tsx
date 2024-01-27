@@ -1,12 +1,10 @@
 import { fireEvent } from '@testing-library/react'
 import { Sidebar } from './Sidebar'
 import '@testing-library/jest-dom'
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation'
-import { MemoryRouter } from 'react-router-dom'
+import { componentRender } from 'shared/lib/tests/componentRender/componentRender'
 describe('Sidebar', () => {
-    // Ready test for sidebar mod 'Collapsed'
     test('should toggle collapsed state on button click', () => {
-        const { getByTestId, container } = renderWithTranslation(<MemoryRouter><Sidebar /></MemoryRouter>)
+        const { getByTestId, container } = componentRender(<Sidebar/>)
 
         expect(container.firstChild).not.toHaveClass('collapsed')
 

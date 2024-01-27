@@ -6,6 +6,7 @@ import { ThemeProvider } from './app/providers/ThemeProvider'
 import { SidebarProvider } from 'app/providers/SidebarProvider'
 import 'shared/config/i18n/i18n'
 import { ErrorBoundary } from 'app/providers/ErrorBoundary'
+import { StoreProvider } from 'app/providers/StoreProvider'
 
 const rootElement = document.getElementById('root')
 
@@ -14,15 +15,17 @@ if (rootElement !== null) {
 
     root.render(
         <React.StrictMode>
-            <BrowserRouter>
-                <ErrorBoundary>
-                    <ThemeProvider>
-                        <SidebarProvider>
-                            <App/>
-                        </SidebarProvider>
-                    </ThemeProvider>
-                </ErrorBoundary>
-            </BrowserRouter>
+            <StoreProvider>
+                <BrowserRouter>
+                    <ErrorBoundary>
+                        <ThemeProvider>
+                            <SidebarProvider>
+                                <App/>
+                            </SidebarProvider>
+                        </ThemeProvider>
+                    </ErrorBoundary>
+                </BrowserRouter>
+            </StoreProvider>
         </React.StrictMode>
     )
 } else {

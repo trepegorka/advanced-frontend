@@ -6,6 +6,7 @@ import { AppRouter } from 'app/providers/router'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 import { PageLoader } from 'widgets/PageLoader'
+import { Counter } from 'entities/Counter'
 
 const App = () => {
     const { theme } = useTheme()
@@ -17,6 +18,7 @@ const App = () => {
                 <Sidebar/>
                 <div className={'content-page'}>
                     <AppRouter/>
+                    <Counter></Counter>
                 </div>
 
             </div>

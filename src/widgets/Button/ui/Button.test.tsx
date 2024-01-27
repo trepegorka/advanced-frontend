@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react'
 import { Button, ThemeButton } from './Button'
+import { componentRender } from 'shared/lib/tests/componentRender/componentRender'
 
 describe('Button', () => {
     test('test render', () => {
-        render(<Button>Test</Button>)
+        componentRender(<Button>Test</Button>)
         expect(screen.getByText('Test')).toBeInTheDocument()
     })
 
