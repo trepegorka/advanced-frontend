@@ -8,7 +8,7 @@ interface useThemeResult {
 
 export function useTheme (): useThemeResult {
     const { theme, setTheme } = useContext(ThemeContext)
-
+    document.body.className = theme
     const changeTheme = () => {
         const newTheme = theme === Theme.DARK ? Theme.NORMAL : Theme.DARK
         setTheme(newTheme)

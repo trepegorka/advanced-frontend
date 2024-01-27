@@ -9,10 +9,10 @@
   "RU": "RU",
   "Throw Error": "Throw Error",
   "about": "about",
+  "decrement": "decrement",
+  "increment": "increment",
   "main": "main",
   "peq": "peq",
   "reload page": "reload page",
-  "toggle": "toggle",
-  "increment": "increment",
-  "decrement": "decrement"
+  "toggle": "toggle"
 }
