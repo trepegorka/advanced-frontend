@@ -18,7 +18,7 @@ export const PageError = ({ className }: PagErrorProps) => {
         <div className={classNames(cls.ErrorPage, {}, [className])}>
             {t('Error was found')}
             <Button onClick={reload}
-                theme={ThemeButton.OUTLINE}
+                theme={ThemeButton.OUTLINE_REVERSE}
                 style={{ margin: '10px' }}
             >
                 {t('reload page')}

@@ -1,40 +1,62 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
-import { type ReactNode, useEffect, useState } from 'react'
+import React, { type ReactNode, useEffect, useState } from 'react'
 import { Portal } from 'shared/ui/Portal/Portal'
+import DimmerOverlay from 'shared/ui/DimmerOverlay/DimmerOverlay'
 
-interface ModalProps {
+export interface ModalProps {
     className?: string
-    children: ReactNode
+    children?: ReactNode
     isOpen: boolean
+    onClose: () => void
 }
 
-export const Modal = ({ className, children, isOpen }: ModalProps) => {
-    const [topR, setTopR] = useState(false)
+export const Modal = ({ className, children = undefined, isOpen = false, onClose }: ModalProps) => {
+    const [isClosing, setIsClosing] = useState(false)
+
     useEffect(() => {
-        if (isOpen) {
-            setTopR(false)
+        const handleEscKeyPress = (event: KeyboardEvent) => {
+            if (event.key === 'Escape' && isOpen) {
+                onClose()
+                console.log('esc')
+            }
         }
+
+        document.addEventListener('keydown', handleEscKeyPress)
+
+        return () => {
+            document.removeEventListener('keydown', handleEscKeyPress)
+        }
+    }, [onClose, isOpen])
+
+    useEffect(() => {
         if (!isOpen) {
-            const displayNoneTimerId = setTimeout(() => {
-                setTopR(true)
+            const timeoutId = setTimeout(() => {
+                setIsClosing(true)
             }, 300)
 
             return () => {
-                clearTimeout(displayNoneTimerId)
+                clearTimeout(timeoutId)
+                setIsClosing(false)
             }
         }
     }, [isOpen])
 
     return (
-        <Portal container={document.body}>
-            <div className={classNames(
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-                cls.Modal,
-                { [cls.topR]: topR, [cls.hidden]: !isOpen },
-                [className])}>
-                {children}
-            </div>
-        </Portal>
+        <>
+            {isOpen && (
+                <Portal container={document.body}>
+                    <DimmerOverlay isOpen={isOpen}
+                        onClick={onClose}
+                        className={cls.fullWindowDimmer}/>
+                    <div className={
+                        classNames(cls.Modal,
+                            { [cls.ScaleZero]: isClosing },
+                            [className])}>
+                        {children}
+                    </div>
+                </Portal>
+            )}
+        </>
     )
 }

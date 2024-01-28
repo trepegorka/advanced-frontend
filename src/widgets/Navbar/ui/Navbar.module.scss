@@ -12,6 +12,6 @@
   margin-left: auto;
 }
 
-.fullWindowDimmer {
-  z-index: calc(var(--sidebar-z) + 1) !important;
+.marginedItem {
+  margin-left: 15px;
 }
