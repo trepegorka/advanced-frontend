@@ -3,6 +3,7 @@ import { Theme, ThemeProvider } from 'app/providers/ThemeProvider'
 import { StyleDecorator } from 'shared/storybook/StyleDecorator/StyleDecorator'
 import React from 'react'
 import { BrowserRouter } from 'react-router-dom'
+import { StoreProvider } from 'app/providers/StoreProvider'
 
 const preview: Preview = {
     parameters: {
@@ -22,8 +23,15 @@ const preview: Preview = {
         }
     },
     decorators: [StyleDecorator(Theme.DARK),
-        Story => (<BrowserRouter><Story/></BrowserRouter>),
-        Story => (<ThemeProvider><Story/></ThemeProvider>)]
+        Story => (
+            <StoreProvider>
+                <BrowserRouter>
+                    <ThemeProvider>
+                        <Story/>
+                    </ThemeProvider>
+                </BrowserRouter>
+            </StoreProvider>)
+    ]
 }
 
 export default preview

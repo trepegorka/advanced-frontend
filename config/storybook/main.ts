@@ -1,6 +1,7 @@
 import type { StorybookConfig } from '@storybook/react-webpack5'
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
 import path from 'path'
+import webpack from 'webpack'
 
 const config: StorybookConfig = {
     stories: ['../../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
@@ -11,6 +12,7 @@ const config: StorybookConfig = {
         '@storybook/addon-interactions',
         '@storybook/addon-styling-webpack'
     ],
+    env: { __IS_DEV__: 'true' },
     framework: {
         name: '@storybook/react-webpack5',
         options: {
@@ -56,6 +58,13 @@ const config: StorybookConfig = {
             test: /\.svg$/,
             use: ['@svgr/webpack']
         })
+
+        // @ts-ignore
+        config.plugins.push(
+            new webpack.DefinePlugin({
+                __IS_DEV__: JSON.stringify(true),
+            })
+        );
 
         return config
     }
