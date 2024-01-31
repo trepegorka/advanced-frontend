@@ -3,7 +3,7 @@ type Mods = Record<string, boolean>
 // Custom classNames() for init css classes in components.
 // May be changed by default react method.
 export function classNames (
-    cls: string,
+    cls: any,
     mods: Mods = {},
     additional?: Array<string | undefined>): string {
     return [

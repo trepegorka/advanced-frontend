@@ -21,7 +21,8 @@
     "compilerOptions": {
       "module": "CommonJS",
       "jsx": "react-jsxdev",
-      "plugins": [{ "name": "typescript-plugin-css-modules" }],
+      "plugins": [{ "name": "typescript-plugin-css-modules" }]
     }
-  }
+  },
+  "exclude": ["config/storybook/main.ts"]
 }

@@ -3,12 +3,14 @@ import { type StateSchema } from 'app/providers/StoreProvider/config/StateSchema
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/user'
 import { type ReducersMapObject } from 'redux'
+import { loginReducer } from 'features/AuthByUserName'
 
 // 'Reusable' store. By using 'createReduxStore' we can create stores separately for dev, tests, stories
 export const createReduxStore = (initialState?: StateSchema) => {
     const rootReducer: ReducersMapObject<StateSchema> = {
         counter: counterReducer,
-        user: userReducer
+        user: userReducer,
+        loginForm: loginReducer
     }
     return configureStore<StateSchema>({
         reducer: rootReducer,

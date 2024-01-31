@@ -12,23 +12,30 @@ export enum ThemeButton {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     theme?: ThemeButton
+    disabled?: boolean
 }
 
 export const Button: FC<ButtonProps> = (props) => {
     const {
         className,
         children,
-        theme,
+        theme = ThemeButton.OUTLINE,
+        disabled = false,
         ...otherProps
     } = props
 
     return (
         <button
-            className={classNames(
+            className={
+                classNames(
                 // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-                cls.Button,
-                { [cls[theme ?? '']]: true },
-                [className])}
+                    cls.Button,
+                    {
+                        [cls[theme]]: true,
+                        [cls.disabled]: disabled
+                    },
+                    [className])}
+            disabled={disabled}
             {...otherProps}
         >
             {children}

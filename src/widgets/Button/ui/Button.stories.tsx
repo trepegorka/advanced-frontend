@@ -39,3 +39,11 @@ export const ClearNormal: Story = {
         children: 'Text'
     }
 }
+
+export const Disabled: Story = {
+    args: {
+        theme: ThemeButton.CLEAR,
+        children: 'Text',
+        disabled: true
+    }
+}

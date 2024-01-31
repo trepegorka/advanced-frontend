@@ -1,5 +1,18 @@
 .Button {
   cursor: pointer;
+
+  &:not(:disabled):hover {
+    transform: scale(1.1);
+  }
+
+  &:not(:disabled):active {
+    transform: scale(0.9);
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .clear,
@@ -17,12 +30,13 @@
 .outline,
 .outline_reverse {
   padding: 5px 10px;
-  background: none;
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
+  background-color: var(--inverted-primary-color);
 }
 
 .outline_reverse {
   border: 1px solid var(--inverted-primary-color);
   color: var(--inverted-primary-color);
+  background-color: var(--primary-color);
 }

@@ -8,5 +8,6 @@
   "reload page": "reload page",
   "increment": "increment",
   "decrement": "decrement",
-  "sign in": "sign in"
+  "sign in": "sign in",
+  "Logout": "Logout"
 }
