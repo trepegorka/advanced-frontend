@@ -6,8 +6,9 @@ import { createReducerManager } from 'app/providers/StoreProvider/config/Reducer
 import { type ReducersMapObject } from 'redux'
 
 // 'Reusable' store. By using 'createReduxStore' we can create stores separately for dev, tests, stories
-export const createReduxStore = (initialState?: StateSchema) => {
+export const createReduxStore = (initialState?: StateSchema, asyncReducers?: ReducersMapObject<StateSchema>) => {
     const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         counter: counterReducer,
         user: userReducer
     }
