@@ -2,20 +2,25 @@ import { configureStore } from '@reduxjs/toolkit'
 import { type StateSchema } from 'app/providers/StoreProvider/config/StateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/user'
+import { createReducerManager } from 'app/providers/StoreProvider/config/ReducerManager'
 import { type ReducersMapObject } from 'redux'
-import { loginReducer } from 'features/AuthByUserName'
 
 // 'Reusable' store. By using 'createReduxStore' we can create stores separately for dev, tests, stories
 export const createReduxStore = (initialState?: StateSchema) => {
-    const rootReducer: ReducersMapObject<StateSchema> = {
+    const rootReducers: ReducersMapObject<StateSchema> = {
         counter: counterReducer,
-        user: userReducer,
-        loginForm: loginReducer
+        user: userReducer
     }
-    return configureStore<StateSchema>({
-        reducer: rootReducer,
+    const reducerManager = createReducerManager(rootReducers)
+
+    const store = configureStore<StateSchema>({
+        reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
-        // data for tests
         preloadedState: initialState
-    })
+    });
+
+    // Добавляем reducerManager в store для легкого доступа
+    (store as any).reducerManager = reducerManager
+
+    return store
 }

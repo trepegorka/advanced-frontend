@@ -21,7 +21,7 @@ export const LoginByUsername =
                 return response.data
             } catch (e) {
                 console.log(e)
-                return thunkAPI.rejectWithValue('incorrect username or password')
+                return thunkAPI.rejectWithValue(e.message)
             }
         }
     )
