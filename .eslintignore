@@ -6,3 +6,4 @@ scripts/generate-visual-json-report.js
 src/shared/assets/icons
 json-server
 config/storybook/main.ts
+*.test.ts
